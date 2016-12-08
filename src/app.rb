@@ -38,8 +38,8 @@ class MainApp < Sinatra::Base
     "#{params[:first].chars.first}.#{params[:last].chars.first}.\n"
   end
 
-
   put '/' do
+    status 204
     # 何らかの作成/更新処理
     "#{request.body.read}"
   end
