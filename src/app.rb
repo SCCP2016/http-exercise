@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require 'json'
 
 # Sinatra Main controller
 class MainApp < Sinatra::Base
@@ -28,8 +29,8 @@ class MainApp < Sinatra::Base
   end
 
   get '/file/:name' do
-    # :name で与えられたファイルを開き、中の内容を返すようなコード
-    # ファイルが存在しない場合は、ステータスコードを変えてエラーを返す。
+    # :name で与えられたpublic/フォルダ内のファイルを開き、中の内容を返すようなコード
+    # ファイルが存在しない場合は、適切なステータスコードを与えてエラーを返す。
   end
 
   post '/', provides: :json do
